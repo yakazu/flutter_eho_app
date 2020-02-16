@@ -12,6 +12,7 @@ class Compass with ChangeNotifier {
   Compass() {
     FlutterCompass.events.listen((value) {
       // 恵方を差すように計算する
+      // Transform.rotateで使用するため、ラジアンに変換する
       _angle = -1 * pi * ((value - ehoAngle) / 180);
 
       notifyListeners();
